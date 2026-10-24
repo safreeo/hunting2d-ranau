@@ -1,0 +1,22 @@
+/* HUNTING 2D RANAU V13 — clean home rebuild */
+home=function(){
+  page(`<section class="v13-home">
+    <img class="v13-logo" src="${V12_KTACR_LOGO}" alt="KTACR logo">
+    <div class="v13-titles"><div class="v13-small">PERTANDINGAN MEMANAH</div><div class="v13-big">HUNTING 2D</div><div class="v13-year">RANAU 2026</div></div>
+    <div class="v13-menu">
+      <button class="v13-start" onclick="groupSetup()"><span class="v13-target"><i></i></span><b>START SCORING</b><em>›</em></button>
+      <button class="v13-ranking" onclick="leaderboard()"><span>🏆</span><b>RANKING</b><em>›</em></button>
+      <button onclick="participants()"><span>👥</span><b>PARTICIPANTS</b><em>›</em></button>
+      <button onclick="eventInfo()"><span class="v13-info">i</span><b>EVENT INFO</b><em>›</em></button>
+    </div>
+  </section>`);
+};
+const v13css=document.createElement('style');v13css.textContent=`
+.v13-home{box-sizing:border-box;width:100%;min-height:100dvh;background:#f4f7fb;padding:18px 20px 24px;display:flex;flex-direction:column;align-items:center;color:#0b365f;text-align:center;overflow:hidden}.v13-logo{width:142px;height:142px;object-fit:contain;display:block;margin:4px auto 12px;filter:drop-shadow(0 4px 7px rgba(0,0,0,.18))}.v13-titles{margin:0 0 22px}.v13-small{font-size:1.12rem;font-weight:950;font-style:italic;line-height:1.15}.v13-big{margin-top:4px;font-size:2.72rem;font-weight:1000;font-style:italic;line-height:1;color:#f5b400;-webkit-text-stroke:1px #8e310f;text-shadow:3px 3px 0 #b83b14}.v13-year{margin-top:8px;font-size:1.95rem;font-weight:1000;font-style:italic;line-height:1}.v13-menu{width:100%;display:grid;gap:11px;margin-top:auto;margin-bottom:5px}.v13-menu button{box-sizing:border-box;width:100%;height:66px;border:1px solid #cad5df;border-radius:14px;background:#fff;color:#0b365f;display:grid;grid-template-columns:62px 1fr 28px;align-items:center;padding:0 16px;box-shadow:0 4px 10px rgba(15,48,78,.12);font-size:1.08rem}.v13-menu button b{text-align:center;font-weight:950}.v13-menu button em{font-style:normal;font-size:2.15rem;font-weight:1000}.v13-menu button>span{font-size:1.55rem}.v13-menu .v13-start{background:#b32119;color:#fff;border-color:#9d1d17}.v13-menu .v13-ranking{background:#f7b916;color:#111;border-color:#e2a400}.v13-info{width:29px;height:29px;border:4px solid #0b365f;border-radius:50%;display:grid!important;place-items:center;margin:auto;font-family:Georgia,serif;font-weight:1000;font-size:1.25rem!important}.v13-target{position:relative;width:39px;height:39px;border-radius:50%;margin:auto;background:radial-gradient(circle,#ffd11a 0 17%,#e43d35 18% 34%,#2879c7 35% 52%,#f5f5f5 53% 70%,#173453 71% 100%);box-shadow:0 2px 4px #0004}.v13-target:before,.v13-target:after{content:'';position:absolute;bottom:-10px;width:3px;height:14px;background:currentColor;border-radius:2px}.v13-target:before{left:12px;transform:rotate(25deg)}.v13-target:after{right:12px;transform:rotate(-25deg)}.v13-target i{position:absolute;left:7px;right:7px;bottom:-10px;height:3px;background:currentColor}.v13-home+.footer{display:none!important}
+/* Keep every normal page header frozen */
+.head,.v6-head,.v7-head{position:sticky!important;top:0!important;z-index:500!important}
+/* Keep the scoring controls visually as one dock */
+.score-fixed-bottom{background:#0b3a69!important;border-radius:18px 18px 0 0!important;border:0!important;box-shadow:0 -4px 16px rgba(7,37,65,.28)!important;padding:9px 12px 8px!important}.score-fixed-bottom .keypad,.score-fixed-bottom .row{background:transparent!important}.v6-fixed-result{background:#159447!important;color:#fff!important;border:0!important;border-radius:0 0 16px 16px!important;box-shadow:none!important}
+@media(max-width:390px){.v13-home{padding:14px 15px 18px}.v13-logo{width:126px;height:126px;margin-bottom:9px}.v13-small{font-size:1rem}.v13-big{font-size:2.38rem}.v13-year{font-size:1.72rem}.v13-titles{margin-bottom:16px}.v13-menu{gap:9px}.v13-menu button{height:60px;font-size:1rem}}
+@media(max-height:700px){.v13-logo{width:108px;height:108px}.v13-big{font-size:2.2rem}.v13-year{font-size:1.55rem}.v13-menu button{height:56px}.v13-menu{gap:7px}.v13-titles{margin-bottom:10px}}
+`;document.head.appendChild(v13css);home();
